@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans transition-colors duration-300 antialiased selection:bg-primary-500/30;
+  }
+  .dark body {
+    @apply bg-[#0f172a] text-slate-100 selection:bg-primary-500/50;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-xl shadow-slate-200/50 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:border-white/80;
+  }
+  .dark .glass-panel {
+    @apply bg-slate-800/40 border-slate-700/50 shadow-black/40 hover:border-slate-600/50 hover:bg-slate-800/60;
+  }
+  
+  .glass-panel-dark {
+    @apply bg-slate-900/80 backdrop-blur-xl border border-slate-700 shadow-2xl rounded-2xl text-white;
+  }
+  .btn-hover {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 active:translate-y-0 active:shadow-md;
+  }
+}
